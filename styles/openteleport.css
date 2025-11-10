@@ -1,0 +1,46 @@
+/**
+ * Open Teleport - Estilos
+ */
+
+/* Estilização dos diálogos */
+.dialog.openteleport-dialog {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #4b4a44;
+  border-radius: 5px;
+}
+
+.dialog.openteleport-dialog .dialog-content {
+  padding: 20px;
+}
+
+.dialog.openteleport-dialog input[type="text"] {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #4b4a44;
+  color: #fff;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.dialog.openteleport-dialog input[type="text"]:focus {
+  border-color: #ff6400;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 100, 0, 0.5);
+}
+
+/* Estilo para o botão na toolbar */
+.control-tool[data-tool="openteleport"] {
+  position: relative;
+}
+
+.control-tool[data-tool="openteleport"]:hover {
+  color: #ff6400;
+}
+
+/* Animação do ícone */
+.control-tool[data-tool="openteleport"] i {
+  transition: transform 0.2s ease;
+}
+
+.control-tool[data-tool="openteleport"]:hover i {
+  transform: scale(1.1);
+}

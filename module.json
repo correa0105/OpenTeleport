@@ -1,0 +1,35 @@
+{
+  "id": "openteleport",
+  "title": "Open Teleport",
+  "description": "Módulo que adiciona teleporte com efeitos visuais do Sequencer",
+  "version": "1.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "OpenTeleport Dev"
+    }
+  ],
+  "esmodules": [
+    "scripts/openteleport.js"
+  ],
+  "styles": [
+    "styles/openteleport.css"
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "sequencer",
+        "type": "module",
+        "compatibility": {
+          "minimum": "3.0.0"
+        }
+      }
+    ]
+  },
+  "url": "",
+  "manifest": "",
+  "download": ""
+}
