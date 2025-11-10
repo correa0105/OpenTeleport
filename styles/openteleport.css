@@ -3,28 +3,142 @@
  */
 
 /* Estilização dos diálogos */
-.dialog.openteleport-dialog {
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid #4b4a44;
-  border-radius: 5px;
+.openteleport-form-group {
+  margin-bottom: 15px;
+  position: relative;
+  overflow: visible;
 }
 
-.dialog.openteleport-dialog .dialog-content {
-  padding: 20px;
+.openteleport-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
 }
 
-.dialog.openteleport-dialog input[type="text"] {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid #4b4a44;
+.openteleport-label-row label {
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.openteleport-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4b4a44;
   color: #fff;
-  padding: 8px;
-  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: help;
+  border: 1px solid #7a7971;
+  position: relative;
 }
 
-.dialog.openteleport-dialog input[type="text"]:focus {
+.openteleport-info-btn:hover {
+  background: #ff6400;
   border-color: #ff6400;
-  outline: none;
-  box-shadow: 0 0 5px rgba(255, 100, 0, 0.5);
+}
+
+.openteleport-tooltip {
+  visibility: hidden;
+  position: fixed;
+  bottom: auto;
+  top: auto;
+  left: auto;
+  transform: translateY(-100%) translateX(-50%);
+  background-color: #2b2b2b;
+  color: #fff;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100000;
+  border: 1px solid #4b4a44;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  pointer-events: none;
+  margin-top: -8px;
+}
+
+.openteleport-info-btn:hover .openteleport-tooltip {
+  visibility: visible;
+}
+
+.openteleport-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #2b2b2b transparent transparent transparent;
+}
+
+.openteleport-effect-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.openteleport-effect-inputs {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.openteleport-effect-path {
+  flex: 2;
+}
+
+.openteleport-effect-duration {
+  flex: 1;
+}
+
+.openteleport-add-btn,
+.openteleport-remove-btn {
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #7a7971;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.openteleport-add-btn:hover {
+  background: #28a745;
+  border-color: #28a745;
+}
+
+.openteleport-remove-btn:hover {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+
+input.openteleport-input {
+  width: 100%;
+  height: 32px;
+  padding: 6px 8px;
+  border: 1px solid #7a7971;
+  background: rgba(0,0,0,0.05);
+  border-radius: 3px;
+  box-sizing: border-box;
 }
 
 /* Estilo para o botão na toolbar */

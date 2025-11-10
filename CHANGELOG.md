@@ -2,6 +2,31 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
+## [1.2.0] - 2024
+
+### Adicionado
+- Suporte para múltiplos efeitos simultâneos (botão +)
+- Campo de duração personalizável para cada efeito (em milissegundos)
+- Botões de informação (!) com tooltips explicativos
+- Possibilidade de remover efeitos adicionais (botão −)
+
+### Modificado
+- Layout dos diálogos completamente redesenhado
+- Labels organizadas horizontalmente para melhor aproveitamento do espaço
+- Removidos logs de debug desnecessários
+- Interface mais limpa e profissional
+
+### Corrigido
+- Compatibilidade com Foundry VTT v13+ (estrutura de controls como objeto)
+- Bug onde o botão não aparecia na toolbar de tokens
+
+### Técnico
+- **openteleport.css**: Adicionados estilos para tooltips e múltiplos efeitos
+- **openteleport.js:99-197**: Reimplementado `promptForEffect()` com suporte a múltiplos efeitos
+- **openteleport.js:202-233**: Atualizado `playExitEffect()` para processar array de efeitos
+- **openteleport.js:316-359**: Atualizado `playEntryEffect()` para processar array de efeitos
+- **openteleport.js:25-35**: Corrigido hook `getSceneControlButtons` para v13
+
 ## [1.1.0] - 2024
 
 ### Adicionado
