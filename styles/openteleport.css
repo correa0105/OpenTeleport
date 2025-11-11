@@ -81,27 +81,95 @@
 
 .openteleport-effect-row {
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #4b4a44;
+  border-radius: 4px;
+  position: relative;
 }
 
-.openteleport-effect-inputs {
-  flex: 1;
+.openteleport-effect-main {
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 
 .openteleport-effect-path {
-  flex: 2;
+  flex: 3;
 }
 
-.openteleport-effect-duration {
+.openteleport-effect-repeats {
   flex: 1;
 }
 
-.openteleport-add-btn,
-.openteleport-remove-btn {
+.openteleport-effect-scale {
+  flex: 1;
+}
+
+.openteleport-effect-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 10px;
+  border-left: 2px solid #4b4a44;
+}
+
+.openteleport-option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.openteleport-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+.openteleport-checkbox-label input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.openteleport-persist-options,
+.openteleport-sound-options {
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.openteleport-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+.openteleport-radio-label input[type="radio"] {
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+}
+
+.openteleport-input-small {
+  width: 80px !important;
+  height: 24px !important;
+  padding: 4px 6px !important;
+  font-size: 12px;
+}
+
+.openteleport-add-btn-inline,
+.openteleport-remove-btn-inline {
   width: 32px;
   height: 32px;
   min-height: 32px;
@@ -121,17 +189,18 @@
   flex-shrink: 0;
 }
 
-.openteleport-add-btn:hover {
+.openteleport-add-btn-inline:hover {
   background: #28a745;
   border-color: #28a745;
 }
 
-.openteleport-remove-btn:hover {
+.openteleport-remove-btn-inline:hover {
   background: #dc3545;
   border-color: #dc3545;
 }
 
-input.openteleport-input {
+input.openteleport-input,
+select.openteleport-input {
   width: 100%;
   height: 32px;
   padding: 6px 8px;
@@ -139,6 +208,126 @@ input.openteleport-input {
   background: rgba(0,0,0,0.05);
   border-radius: 3px;
   box-sizing: border-box;
+  color: #fff;
+}
+
+input.openteleport-input.effect-path {
+  padding-right: 35px;
+}
+
+select.openteleport-input {
+  padding-right: 24px;
+}
+
+select.openteleport-input option {
+  background: #2b2b2b;
+  color: #fff;
+}
+
+select.openteleport-input optgroup {
+  background: #1a1a1a;
+  color: #ff6400;
+  font-weight: bold;
+}
+
+.openteleport-effect-path {
+  position: relative;
+}
+
+.openteleport-favorite-btn {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.openteleport-favorite-btn:hover {
+  color: #ffd700;
+}
+
+.openteleport-favorite-btn.favorited {
+  color: #ffd700;
+}
+
+.openteleport-favorites-dropdown {
+  position: fixed;
+  background: #2b2b2b;
+  border: 1px solid #4b4a44;
+  border-radius: 4px;
+  z-index: 100000;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.openteleport-favorites-header {
+  padding: 6px 10px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #4b4a44;
+  font-weight: bold;
+  font-size: 11px;
+  color: #ccc;
+}
+
+.openteleport-favorites-list {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.openteleport-favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.openteleport-favorite-item:hover {
+  background: #3a3a3a;
+}
+
+.openteleport-favorite-item .favorite-path {
+  flex: 1;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.openteleport-favorite-item .favorite-duration {
+  color: #999;
+  font-size: 10px;
+}
+
+.openteleport-unfavorite-btn {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #dc3545;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.openteleport-unfavorite-btn:hover {
+  color: #ff4555;
 }
 
 /* Estilo para o botão na toolbar */
@@ -156,5 +345,117 @@ input.openteleport-input {
 }
 
 .control-tool[data-tool="openteleport"]:hover i {
+  transform: scale(1.1);
+}
+
+/* Botão de teleporte rápido no Token HUD */
+.control-icon.openteleport-quick {
+  background: rgba(255, 100, 0, 0.8);
+  border: 1px solid #ff6400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-icon.openteleport-quick:hover {
+  background: rgba(255, 100, 0, 1);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 100, 0, 0.6);
+}
+
+.control-icon.openteleport-quick i {
+  color: #fff;
+  animation: pulse 2s infinite;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Diálogo de seleção de presets */
+.openteleport-preset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.openteleport-preset-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #4b4a44;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.openteleport-preset-item:hover {
+  background: rgba(255, 100, 0, 0.2);
+  border-color: #ff6400;
+}
+
+.preset-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.preset-info strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.preset-info small {
+  color: #999;
+  font-size: 11px;
+}
+
+.preset-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.preset-use-btn,
+.preset-delete-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #7a7971;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.preset-use-btn:hover {
+  background: #28a745;
+  border-color: #28a745;
+  transform: scale(1.1);
+}
+
+.preset-delete-btn:hover {
+  background: #dc3545;
+  border-color: #dc3545;
   transform: scale(1.1);
 }

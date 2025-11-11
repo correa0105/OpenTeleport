@@ -2,6 +2,28 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
+## [1.3.0] - 2024
+
+### Adicionado
+- Sistema de favoritos para efeitos (botão ⭐ nos campos)
+- Dropdown de favoritos ao clicar no campo de efeito
+- Possibilidade de remover efeitos dos favoritos
+- Animação de movimento suave do token ao teleportar
+- Container do diálogo cresce automaticamente sem scrollbar
+
+### Modificado
+- Token agora se move suavemente até o destino ao invés de teleporte instantâneo
+- Efeitos de chegada acompanham o token durante o movimento
+- Diálogo redimensionável e com altura automática
+- Input de efeito com espaço para botão de favorito
+
+### Técnico
+- **openteleport.js:15-44**: Métodos para gerenciar favoritos (getFavorites, addFavorite, removeFavorite)
+- **openteleport.js:57-63**: Registro de configuração de favoritos no game.settings
+- **openteleport.js:279-375**: Sistema completo de favoritos com dropdown
+- **openteleport.js:494-537**: Reimplementado playEntryEffect com animação de movimento
+- **openteleport.css:134-243**: Estilos para botão de favorito e dropdown
+
 ## [1.2.0] - 2024
 
 ### Adicionado
